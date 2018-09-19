@@ -14,7 +14,7 @@ import PySimpleGUI as sg
 #create button
 layout = [
     [sg.Input(size=(31, 1), do_not_clear=True, justification='right', key='input')],
-    [sg.ReadFormButton('(', button_color=('black','oldlace')), sg.ReadFormButton(')', button_color=('black','oldlace')), sg.ReadFormButton('Del.', button_color=('black','oldlace')), sg.ReadFormButton('/', button_color=('black','oldlace'))],
+    [sg.ReadFormButton('(', button_color=('black','oldlace')), sg.ReadFormButton(')', button_color=('black','oldlace')), sg.ReadFormButton('Delete', button_color=('black','oldlace')), sg.ReadFormButton('/', button_color=('black','oldlace'))],
     [sg.ReadFormButton('7', button_color=('black','oldlace')), sg.ReadFormButton('8', button_color=('black','oldlace')), sg.ReadFormButton('9', button_color=('black','oldlace')), sg.ReadFormButton('*', button_color=('black','oldlace'))],
     [sg.ReadFormButton('4', button_color=('black','oldlace')), sg.ReadFormButton('5', button_color=('black','oldlace')), sg.ReadFormButton('6', button_color=('black','oldlace')), sg.ReadFormButton('-', button_color=('black','oldlace'))],
     [sg.ReadFormButton('1', button_color=('black','oldlace')), sg.ReadFormButton('2', button_color=('black','oldlace')), sg.ReadFormButton('3', button_color=('black','oldlace')), sg.ReadFormButton('+', button_color=('black','oldlace'))],
@@ -33,19 +33,19 @@ while True:
             break
         elif button in '1234567890().+-*/':
             keys_entered += button  # add the new digit
-        elif button is 'Del.':
+        elif button is 'Delete':
             keys_entered = keys_entered[:-1] # delete last member in string variable
             form.FindElement('input').Update(keys_entered)  # output the final string
         elif button is 'Clear': # clear keys if clear button delete all member in keys_entered variable
             keys_entered = ''
             form.FindElement('input').Update(keys_entered)
         elif button is '=':
-            # chek error if the format is not possible
-            if ('/' in keys_entered and keys_entered[keys_entered.index('/')+1]=='0') or (keys_entered[-1] in '+-*/') or ( '(' in keys_entered and ')' not in keys_entered) or ( ')' in keys_entered and '(' not in keys_entered):
-                pass
-            else:
+            try: #if error
                 keys_entered = str(eval(keys_entered)) #eval calculate string
                 form.FindElement('input').Update(keys_entered)
+            except:
+                pass
     else:
         keys_entered = keys_entered[:20]
     form.FindElement('input').Update(keys_entered)  # change the form to reflect current key string
+
