@@ -40,7 +40,8 @@ while True:
             keys_entered = ''
             form.FindElement('input').Update(keys_entered)
         elif button is '=':
-            try: #if error
+            # chek error if the format is not possible
+            try: 
                 keys_entered = str(eval(keys_entered)) #eval calculate string
                 form.FindElement('input').Update(keys_entered)
             except:
