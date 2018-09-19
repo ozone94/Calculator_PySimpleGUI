@@ -17,7 +17,7 @@ layout = [
     [sg.ReadFormButton('(', button_color=('black','oldlace')), sg.ReadFormButton(')', button_color=('black','oldlace')), sg.ReadFormButton('Del.', button_color=('black','oldlace')), sg.ReadFormButton('/', button_color=('black','oldlace'))],
     [sg.ReadFormButton('7', button_color=('black','oldlace')), sg.ReadFormButton('8', button_color=('black','oldlace')), sg.ReadFormButton('9', button_color=('black','oldlace')), sg.ReadFormButton('*', button_color=('black','oldlace'))],
     [sg.ReadFormButton('4', button_color=('black','oldlace')), sg.ReadFormButton('5', button_color=('black','oldlace')), sg.ReadFormButton('6', button_color=('black','oldlace')), sg.ReadFormButton('-', button_color=('black','oldlace'))],
-    [sg.ReadFormButton('1', button_color=('black','oldlace')), sg.ReadFormButton('2', button_color=('black','oldlace')), sg.ReadFormButton('3', button_color=('black','oldlace')), sg.ReadFormButton('0', button_color=('black','oldlace'))],
+    [sg.ReadFormButton('1', button_color=('black','oldlace')), sg.ReadFormButton('2', button_color=('black','oldlace')), sg.ReadFormButton('3', button_color=('black','oldlace')), sg.ReadFormButton('+', button_color=('black','oldlace'))],
     [sg.ReadFormButton('.', button_color=('black','oldlace')), sg.ReadFormButton('0', button_color=('black','oldlace')), sg.ReadFormButton('Clear', button_color=('black','oldlace')), sg.ReadFormButton('=', button_color=('black','oldlace'))]
 ]
 
